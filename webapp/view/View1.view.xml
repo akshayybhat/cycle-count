@@ -1,0 +1,59 @@
+<mvc:View controllerName="zcyclecount.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <!-- Filter Fields -->
+            <HBox justifyContent="Center" alignItems="Center" class="sapUiSmallMargin">
+                <!-- User Name Filter -->
+                <VBox class="sapUiSmallMarginEnd">
+                    <Label text="User Name" />
+                    <Input id="userNameInput" placeholder="Enter User Name" />
+                </VBox>
+
+                <!-- Warehouse Number Filter -->
+                <VBox>
+                    <Label text="Warehouse Number" />
+                    <Input id="warehouseInput"
+                           placeholder="Select Warehouse Number"
+                           showValueHelp="true"
+                           valueHelpRequest="onValueHelpRequest" />
+                </VBox>
+            </HBox>
+
+            <!-- Table -->
+            <Table id="dataTable" items="{/data}">
+                <columns>
+                     <Column>
+                        <Text text="Select" />
+                    </Column>
+                    <Column>
+                        <Text text="Column 1" />
+                    </Column>
+                    <Column>
+                        <Text text="Column 2" />
+                    </Column>
+                    <Column>
+                        <Text text="Column 3" />
+                    </Column>
+                    <Column>
+                        <Text text="Column 4" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <RadioButton 
+                    groupName="tableRadioGroup" 
+                    select="onRadioSelect" />
+                            <Text text="{col1}" />
+                            <Text text="{col2}" />
+                            <Text text="{col3}" />
+                            <Text text="{col4}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
